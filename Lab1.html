@@ -30,19 +30,20 @@
 
 <script>
     let count=0;
-   
+    let interval=null;
+
 	function addcount(){
     	document.getElementById("count").innerText=count;
         count++;
     }
     
     document.getElementById("startbtn").addEventListener("click",function(){
-        let interval= setInterval(addcount,1000);
+        interval= setInterval(addcount,1000);
     });
 
     document.getElementById("stopbtn").addEventListener("click",function(){
         clearInterval(interval);
-
+        interval=null;
     })
 
 	
