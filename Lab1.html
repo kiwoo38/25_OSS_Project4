@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+.block{
+	padding: 50px;
+	background-color: yellow;
+	text-align:center;
+    width:180px;
+    margin:auto;
+}
+.btn{
+	padding:15px;
+	display:flex;
+    justify-content:center;
+    gap:10px;
+}
+</style>
+</head>
+<body>
+	<p class="block" id="count">
+        0
+    </p>
+    
+    <div class="btn">
+   		<button id="startbtn">시작</button>
+    	<button id="stopbtn">중지</button>
+    </div>
+
+<script>
+    let count=0;
+   
+	function addcount(){
+    	document.getElementById("count").innerText=count;
+        count++;
+    }
+    
+    document.getElementById("startbtn").addEventListener("click",function(){
+        let interval= setInterval(addcount,1000);
+    });
+
+    document.getElementById("stopbtn").addEventListener("click",function(){
+        clearInterval(interval);
+
+    })
+
+	
+	
+</script>
+
+</body>
+</html>
+
+
+
+
