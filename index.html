@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI 개발자 | 김기우</title>
+  <meta name="description" content="C, C++, Java 중심의 AI 개발자 포트폴리오 샘플 페이지" />
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --brand: #60a5fa;
+      --brand-2: #34d399;
+      --acc: #f59e0b;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, "Apple SD Gothic Neo", "Malgun Gothic", "Helvetica Neue", Arial, "Noto Sans KR", sans-serif; }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { width: min(1100px, 92%); margin: 0 auto; }
+    header { position: sticky; top: 0; backdrop-filter: saturate(180%) blur(8px); background: rgba(11,15,23,0.75); border-bottom: 1px solid #1f2937; z-index: 20; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .brand { display: flex; gap: 10px; align-items: center; font-weight: 700; letter-spacing: 0.3px; }
+    .badge { font-size: 12px; color: var(--bg); background: linear-gradient(90deg,var(--brand),var(--brand-2)); padding: 4px 8px; border-radius: 999px; font-weight: 700; }
+    .nav-links { display: flex; gap: 18px; }
+    .nav-links a { color: var(--muted); font-weight: 600; }
+    .nav-links a:hover { color: var(--text); }
+
+    .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center; padding: 60px 0 30px; }
+    .hero h1 { font-size: clamp(28px, 5vw, 44px); line-height: 1.1; margin: 0 0 14px; }
+    .hero p { color: var(--muted); font-size: clamp(14px, 2.5vw, 18px); }
+
+    .avatar-card { background: radial-gradient(1200px 400px at 10% -20%, rgba(96,165,250,.15), transparent), radial-gradient(1000px 400px at 110% 120%, rgba(52,211,153,.12), transparent); border: 1px solid #1f2937; border-radius: var(--radius); padding: 24px; display: grid; gap: 16px; }
+    .avatar { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 2px solid #1f2937; }
+    .stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+    .stat { background: #0f172a; border: 1px solid #1f2937; padding: 12px; border-radius: 12px; text-align: center; }
+    .stat b { font-size: 20px; display: block; }
+
+    h2.section-title { font-size: clamp(22px, 4vw, 32px); margin: 48px 0 16px; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+
+    .card { background: #0f172a; border: 1px solid #1f2937; padding: 18px; border-radius: var(--radius); }
+    .card h3 { margin: 0 0 10px; font-size: 18px; }
+    .muted { color: var(--muted); }
+
+    /* Skills */
+    .skill-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+    .chip { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: #0b1220; border: 1px solid #1f2937; font-weight: 600; }
+    .chip small { color: var(--muted); font-weight: 400; }
+
+    /* Projects */
+    .project { display: grid; grid-template-columns: 160px 1fr; gap: 14px; align-items: start; }
+    .project img { width: 100%; border-radius: 12px; border: 1px solid #1f2937; object-fit: cover; aspect-ratio: 16/10; }
+
+    /* Lists */
+    ul.clean, ol.clean { margin: 10px 0 0 18px; color: var(--muted); }
+    li + li { margin-top: 6px; }
+
+    /* Footer */
+    footer { margin-top: 60px; padding: 28px 0 60px; color: var(--muted); border-top: 1px solid #1f2937; text-align: center; }
+
+    /* Responsive */
+    @media (max-width: 880px) {
+      .hero { grid-template-columns: 1fr; }
+      .project { grid-template-columns: 1fr; }
+      nav { flex-wrap: wrap; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <span class="badge">AI Developer</span>
+          <span>김기우</span>
+        </div>
+        <div class="nav-links">
+          <a href="#about">소개</a>
+          <a href="#skills">기술스택</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero" aria-label="Hero">
+      <div>
+        <h1>문제 해결에 강한 <span style="color:var(--brand)">AI 개발자</span>,<br/> C · C++ · Java 중심 백엔드/모델 엔지니어</h1>
+        <p>
+          알고리즘과 자료구조에 기반한 성능 최적화, 신뢰할 수 있는 시스템 구현,
+          그리고 실제 서비스에 적용 가능한 AI 모델 개발에 관심이 있습니다.
+        </p>
+      </div>
+      <aside class="avatar-card">
+        <div style="display:flex; gap:14px; align-items:center;">
+          <img class="avatar" src="사진.png" alt="프로필 사진(예시)"/>
+          <div>
+            <b>김기우</b>
+            <div class="muted">Handong · 컴퓨터공학</div>
+            <div class="muted">관심: 모델서빙 · 시스템 프로그래밍 · 최적화</div>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>3+</b><span class="muted">언어(C/CPP/Java)</span></div>
+          <div class="stat"><b>10+</b><span class="muted">프로젝트</span></div>
+          <div class="stat"><b>2</b><span class="muted">대회 수상</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <h2 class="section-title">소개</h2>
+      <div class="grid">
+        <article class="card" style="grid-column: span 7;">
+          <h3>한 줄 소개</h3>
+          <p class="muted">
+            C/C++로 성능을 다루고, Java로 견고한 애플리케이션을 만들며,
+            AI 모델을 실제 환경에 배포하고 관찰하는 일을 좋아합니다.
+          </p>
+          <ul class="clean">
+            <li>관심사: 시스템 프로그래밍, 모델 서빙, 추론 최적화, 데이터 파이프라인</li>
+            <li>핵심 역량: 문제 분해, 디버깅, 알고리즘/자료구조 적용</li>
+            <li>가치관: 가독성, 재현 가능한 실험</li>
+          </ul>
+        </article>
+        <aside class="card" style="grid-column: span 5;">
+          <h3>과제 nostyle, style1, style2, example 링크가기</h3>
+          <ol class="clean">
+            <li><a href="Lab1.html" target="_blank" rel="noopener">Lab1.html</a></li>
+            <li><a href="Lab2.html">Lab2.html</a></li>
+            <li><a href="Lab3.html">Lab3.html</a></li>
+            <li><a href="js_ajax.html">js_ajax.html</a></li>
+          </ol>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2 class="section-title">기술스택</h2>
+      <div class="skill-list">
+        <div class="card">
+          <h3>C</h3>
+          <p class="muted">포인터, 메모리 관리, 파일 I/O, 빌드/디버깅(Make, gdb)</p>
+          <div class="chip">자료구조 <small>(리스트/스택/큐)</small></div>
+          <div class="chip">파일 시스템 <small>(기초)</small></div>
+        </div>
+        <div class="card">
+          <h3>C++</h3>
+          <p class="muted">RAII, STL, 템플릿, 성능 최적화, OOP</p>
+          <div class="chip">알고리즘 <small>(정렬/탐색/그래프)</small></div>
+          <div class="chip">멀티스레딩 <small>(기초)</small></div>
+        </div>
+        <div class="card">
+          <h3>Java</h3>
+          <p class="muted">컬렉션, 예외, 스트림, 간단한 CLI/웹 백엔드</p>
+          <div class="chip">JDBC/SQLite <small>(기초)</small></div>
+          <div class="chip">Javadoc/테스트</div>
+        </div>
+        <div class="card">
+          <h3>AI/데이터</h3>
+          <p class="muted">파이프라인 작성, 간단한 모델 학습/서빙, 지표/로깅</p>
+          <div class="chip">Python <small>(NumPy/Pandas)</small></div>
+          <div class="chip">Model Serving <small>(개념)</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Extra: 목록/링크/이미지 예시 블록 -->
+    <section>
+      <h2 class="section-title">샘플 구성 요소</h2>
+      <div class="grid">
+        <div class="card" style="grid-column: span 6;">
+          <h3>학습</h3>
+          <ol class="clean">
+            <li>C로 파일 I/O 실습하기</li>
+            <li>C++로 우선순위 큐 구현</li>
+            <li>Java로 CSV 리포팅 자동화</li>
+          </ol>
+        </div>
+        <div class="card" style="grid-column: span 6;">
+          <h3>공부</h3>
+          <ul class="clean">
+            <li>알고리즘 문제풀이</li>
+            <li>리팩터링 & 코드 리뷰</li>
+            <li>문서화(Javadoc, README)</li>
+          </ul>
+        </div>
+        <div class="card" style="grid-column: span 12;">
+          <h3>링크</h3>
+      
+          <p>더 많은 정보는 <a href="https://github.com/kiwoo38" target="_blank" rel="noopener">GitHub</a>를 참고하세요.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Kim Kiwoo. Built with HTML + CSS.
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
