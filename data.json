@@ -1,10 +1,29 @@
 {
-    "students": [
-      { "id": 1, "name": "Jerry", "age": 20 },
-      { "id": 2, "name": "Tom", "age": 18 }
-    ],
-    "courses": [
-      { "id": 1, "cname": "Open source studio", "credit": 3 },
-      { "id": 2, "cname": "Programming studio", "credit": 2 }
-    ]
+  "students": [
+    {
+      "id": "1",
+      "name": "Jerry",
+      "age": 20
+    },
+    {
+      "id": "2",
+      "name": "Tom",
+      "age": 18
+    },
+    {
+      "id": "3",
+      "name": "Kiwoo",
+      "age": 25
+    },
+    {
+      "id": "4",
+      "name": "Dohun",
+      "age": 23
+    },
+    {
+      "name": "Bob",
+      "age": 21,
+      "id": "5"
+    }
+  ]
 }
