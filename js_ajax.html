@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    #contents{
+        background-color: #ffffe0;
+        width:1000px;
+        height:500px;
+    }
+
+</style>
+</head>
+<body>
+    <button>학생데이터 가져오기</button>
+    <div>
+        <input>
+        <input id="name" placeholder="name">
+        <input id ="age" placeholder="age">
+        <button id="btnAdd">학생데이터 추가</button>
+        <button id="btnAdd">학생데이터 수정</button>
+        <button id="btnAdd">학생데이터 삭제</button>
+        <button onclick="postData()">학생 데이터 추가</button>
+    </div>
+    <div id="contents">
+        
+    </div>
+</body>
+</html>
+<script>
+    
+    function getStudents(){
+
+        xhr.onload=()=>{
+            if(xhr.status===200)
+        }
+    }
+
+
+    function postData(){
+        let contents=document.getElementById("contents");
+        let name=document.getElementById("name");
+        let age=document.getElementById("age");
+        const xhr=new XMLHttpRequest();
+        xhr.open("POST","http://localhost:3000/students");
+        xhr.setRequestHeader("content-type","application/json;charset=UTF-8");
+        const data={name: name.value, age:age.value};
+
+        xhr.send(JSON.stringify(data));
+        xhr.onload=()=>{
+            if(xhr.status ===201){
+                name.value="";
+                age.value="";
+                const res=JSON.parse(xhr.response);
+                getStudents();
+            }else{
+                console.log(xhr.status,xhr.statusText);
+            }
+        }
+    }
+</script>

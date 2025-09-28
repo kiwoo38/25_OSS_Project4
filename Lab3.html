@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="loadBtn">Get Data</button>
+    <ul id="userList"></ul>
+</body>
+</html>
+<script>
+    document.getElementById("loadBtn").addEventListener("click",()=>
+    {
+        fetch("https://jsonplaceholder.typicode.com/users") // 비동기적으로 접속
+        .then(response=>response.json()) 
+        .then(data=>{
+            const userList =document.getElementById("userList");
+            userList.innerHTML=""; // 기존 목록 초기화
+            data.forEach(user=>{
+                const li=document.createElement("li");
+                li.textContent= `${user.name}(${user.email})`;
+                userList.appendChild(li);
+            });
+        })
+        .catch(error=>console.error("에러 발생:",error))
+    });
+</script>
