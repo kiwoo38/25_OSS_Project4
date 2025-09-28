@@ -78,6 +78,7 @@
         xhr.send(JSON.stringify(data));
         xhr.onload=()=>{
             if(xhr.status ===201){
+                stdID.value="";
                 name.value="";
                 age.value="";
                 const res=JSON.parse(xhr.response);
