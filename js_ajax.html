@@ -103,6 +103,9 @@
 
         xhr.onload=()=>{
             if(xhr.status===200){
+                stdID.value="";
+                name.value="";
+                age.value="";
                 const res =JSON.parse(xhr.response);
                 console.log(res);
                 getStudents();
@@ -121,6 +124,9 @@
         
         xhr.onload= ()=>{
             if(xhr.status===200){
+                stdID.value="";
+                name.value="";
+                age.value="";
                 getStudents();
             }else{
                 console.log(xhr.status,xhr.statusText);
