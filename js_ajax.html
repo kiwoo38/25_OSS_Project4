@@ -34,10 +34,11 @@
         let btnStu=document.getElementById("btnStu");
         let btnAdd= document.getElementById("btnAdd"); 
         let btnEdit= document.getElementById("btnEdit");
-        
+        let btnDel= document.getElementById("btnDel");
         btnStu.addEventListener("click",getStudents);
         btnAdd.addEventListener("click",postData);
         btnEdit.addEventListener("click",updateData);
+        btnDel.addEventListener("click",deleteData);
     }
     function getStudents(){
         let contents=document.getElementById("contents");
@@ -66,12 +67,13 @@
 
     function postData(){
         let contents=document.getElementById("contents");
+        let stdID=document.getElementById("stdID");
         let name=document.getElementById("name");
         let age=document.getElementById("age");
         const xhr=new XMLHttpRequest();
         xhr.open("POST","http://localhost:3000/students");
         xhr.setRequestHeader("content-type","application/json;charset=UTF-8");
-        const data={name: name.value, age:age.value};
+        const data={id:stdID.value, name: name.value, age:age.value};
 
         xhr.send(JSON.stringify(data));
         xhr.onload=()=>{
@@ -95,7 +97,7 @@
         xhr.open("PUT","http://localhost:3000/students/"+id);
         xhr.setRequestHeader("content-type","application/json; charset=UTF-8");
 
-        const data={name:name ,age:Number(age)};
+        const data={id: id, name:name ,age: age};
         xhr.send(JSON.stringify(data));
 
         xhr.onload=()=>{
@@ -106,6 +108,22 @@
             }else{
                 console.log(xhr.status,xhr.statusText);
             }
+        }
+    }
+
+    function deleteData(){
+        const id= document.getElementById("stdID").value;
+        
+        const xhr =new XMLHttpRequest();
+        xhr.open("DELETE","http://localhost:3000/students/"+id);
+        xhr.send();
+        
+        xhr.onload= ()=>{
+            if(xhr.status===200){
+                getStudents();
+            }else{
+                console.log(xhr.status,xhr.statusText);
+            };
         }
     }
 </script>
